@@ -1,68 +1,170 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap');
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* Praana Healthcare Design System */
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    /* Primary - Deep Navy Blue (Trust, Professionalism) */
+    --primary: 213 55% 20%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Teal/Cyan (Health, Vitality) */
+    --secondary: 189 94% 43%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Accent - Warm Coral (Warmth, Care) */
+    --accent: 12 76% 61%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Background & Surface */
+    --background: 210 33% 98%;
+    --foreground: 213 55% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 55% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 55% 15%;
+
+    /* Muted */
+    --muted: 210 20% 94%;
+    --muted-foreground: 213 20% 45%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border & Input */
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 189 94% 43%;
+
+    --radius: 0.75rem;
+
+    /* Custom Healthcare Colors */
+    --navy: 213 55% 20%;
+    --navy-light: 213 45% 30%;
+    --teal: 189 94% 43%;
+    --teal-light: 189 80% 55%;
+    --coral: 12 76% 61%;
+    --cream: 40 33% 97%;
+    --sage: 158 25% 75%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(213 55% 20%) 0%, hsl(213 45% 30%) 100%);
+    --gradient-teal: linear-gradient(135deg, hsl(189 94% 43%) 0%, hsl(189 80% 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(213 55% 20% / 0.9) 0%, hsl(189 94% 43% / 0.8) 100%);
+    --gradient-coral: linear-gradient(135deg, hsl(12 76% 61%) 0%, hsl(25 85% 65%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(213 55% 20% / 0.06);
+    --shadow-md: 0 4px 20px hsl(213 55% 20% / 0.1);
+    --shadow-lg: 0 8px 40px hsl(213 55% 20% / 0.15);
+    --shadow-xl: 0 20px 60px hsl(213 55% 20% / 0.2);
+    --shadow-teal: 0 8px 30px hsl(189 94% 43% / 0.3);
+    --shadow-coral: 0 8px 30px hsl(12 76% 61% / 0.3);
+
+    /* Sidebar (keeping defaults) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
-  a:hover {
-    color: #747bff;
+
+  .dark {
+    --background: 213 55% 8%;
+    --foreground: 210 33% 98%;
+
+    --card: 213 50% 12%;
+    --card-foreground: 210 33% 98%;
+
+    --popover: 213 50% 12%;
+    --popover-foreground: 210 33% 98%;
+
+    --primary: 189 94% 50%;
+    --primary-foreground: 213 55% 10%;
+
+    --secondary: 213 45% 25%;
+    --secondary-foreground: 210 33% 98%;
+
+    --muted: 213 40% 18%;
+    --muted-foreground: 210 20% 60%;
+
+    --accent: 12 76% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 213 40% 20%;
+    --input: 213 40% 20%;
+    --ring: 189 94% 50%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-24 px-4 md:px-8;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-teal);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-2;
+    box-shadow: var(--shadow-md);
+  }
+
+  .card-hover:hover {
+    box-shadow: var(--shadow-xl);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }
